@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <title>Portfólio</title>
+    <style>
+        /* Importa a mesma fonte rústica da tela inicial */
+        @import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Caveat:wght@400;700&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            background: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Segoe UI', Roboto, system-ui, sans-serif;
+            overflow: hidden;
+            position: relative;
+            width: 100%;
+            /* Animação de entrada sutil */
+            animation: fadeIn 0.8s ease forwards;
+        }
+
+        /* Animação de entrada */
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: scale(0.95);
+                filter: blur(2px);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1);
+                filter: blur(0);
+            }
+        }
+
+        /* Container da imagem */
+        .portfolio-container {
+            position: relative;
+            z-index: 10;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 100vh;
+            padding: 20px;
+        }
+
+        /* Imagem do portfólio - centralizada e responsiva */
+        .portfolio-image {
+            max-width: 90%;
+            max-height: 90vh;
+            width: auto;
+            height: auto;
+            object-fit: contain;
+            border-radius: 12px;
+            box-shadow: 0 8px 40px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            /* Animação de flutuação suave */
+            animation: float 4s ease-in-out infinite;
+        }
+
+        .portfolio-image:hover {
+            transform: scale(1.02);
+            box-shadow: 0 12px 60px rgba(0, 0, 0, 0.12);
+        }
+
+        /* Animação de flutuação */
+        @keyframes float {
+            0%,
+            100% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        /* Botão de voltar (opcional) - estilo minimalista */
+        .btn-back {
+            position: fixed;
+            top: clamp(20px, 4vh, 40px);
+            left: clamp(20px, 4vw, 40px);
+            z-index: 20;
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(4px);
+            -webkit-backdrop-filter: blur(4px);
+            border: 1px solid rgba(44, 24, 16, 0.1);
+            border-radius: 30px;
+            padding: 8px 18px;
+            color: #2c1810;
+            font-family: 'Amatic SC', 'Caveat', cursive;
+            font-size: clamp(1.2rem, 2.5vw, 1.8rem);
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            opacity: 0.6;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .btn-back:hover {
+            opacity: 1;
+            transform: scale(1.05);
+            border-color: rgba(44, 24, 16, 0.3);
+            background: rgba(255, 255, 255, 0.95);
+        }
+
+        /* Estrelas decorativas (opcional, para manter o tema) */
+        .deco-star {
+            position: fixed;
+            pointer-events: none;
+            opacity: 0.15;
+            z-index: 0;
+            font-size: clamp(1.5rem, 4vw, 4rem);
+            animation: twinkle 3s ease-in-out infinite alternate;
+        }
+
+        @keyframes twinkle {
+            0% {
+                opacity: 0.1;
+                transform: scale(0.9) rotate(0deg);
+            }
+            100% {
+                opacity: 0.25;
+                transform: scale(1.1) rotate(20deg);
+            }
+        }
+
+        /* Ajustes para telas pequenas */
+        @media (max-width: 480px) {
+            .portfolio-image {
+                max-width: 95%;
+                max-height: 80vh;
+            }
+            .btn-back {
+                padding: 6px 14px;
+                font-size: 1rem;
+                top: 15px;
+                left: 15px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .portfolio-image {
+                max-width: 92%;
+                max-height: 85vh;
+            }
+        }
+
+        /* Para tablets */
+        @media (min-width: 768px) and (max-width: 1024px) {
+            .portfolio-image {
+                max-width: 85%;
+                max-height: 85vh;
+            }
+        }
+
+        /* Para telas muito grandes */
+        @media (min-width: 1400px) {
+            .portfolio-image {
+                max-width: 70%;
+                max-height: 85vh;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Botão de voltar para a tela inicial -->
+    <a href="index.html" class="btn-back">← voltar</a>
+
+    <!-- Estrelas decorativas (mantendo o tema) -->
+    <div class="deco-star" style="top: 8%; left: 5%;">✦</div>
+    <div class="deco-star" style="top: 12%; right: 8%; animation-delay: 1s;">✧</div>
+    <div class="deco-star" style="bottom: 15%; left: 8%; animation-delay: 0.5s;">✦</div>
+    <div class="deco-star" style="bottom: 20%; right: 5%; animation-delay: 1.5s;">✧</div>
+    <div class="deco-star" style="top: 45%; left: 3%; animation-delay: 2s;">✦</div>
+    <div class="deco-star" style="top: 50%; right: 3%; animation-delay: 0.8s;">✧</div>
+
+    <!-- Container principal com a imagem -->
+    <div class="portfolio-container">
+        <img 
+            src="portfolio-image.jpg" 
+            alt="Meu Portfólio" 
+            class="portfolio-image"
+            id="portfolioImg"
+        >
+    </div>
+
+    <script>
+        (function() {
+            // ===== IMAGEM DO PORTFÓLIO =====
+            // Se a imagem não carregar, exibe um placeholder com o nome do arquivo
+            const img = document.getElementById('portfolioImg');
+            
+            // Verifica se a imagem carregou
+            img.addEventListener('error', function() {
+                // Se a imagem não for encontrada, exibe um texto alternativo
+                this.style.display = 'none';
+                const fallback = document.createElement('div');
+                fallback.style.cssText = `
+                    font-family: 'Amatic SC', 'Caveat', cursive;
+                    font-size: clamp(2rem, 5vw, 4rem);
+                    color: #2c1810;
+                    opacity: 0.5;
+                    text-align: center;
+                    padding: 40px;
+                    background: rgba(255, 255, 255, 0.5);
+                    border-radius: 20px;
+                    border: 2px dashed rgba(44, 24, 16, 0.15);
+                `;
+                fallback.textContent = '📸 portfolio-image.jpg';
+                
+                // Adiciona instrução
+                const instrucao = document.createElement('p');
+                instrucao.style.cssText = `
+                    font-family: 'Segoe UI', sans-serif;
+                    font-size: clamp(0.8rem, 1.5vw, 1rem);
+                    color: #666;
+                    margin-top: 15px;
+                    opacity: 0.6;
+                `;
+                instrucao.textContent = 'Coloque sua imagem com o nome "portfolio-image.jpg" na mesma pasta';
+                fallback.appendChild(instrucao);
+                
+                this.parentElement.appendChild(fallback);
+            });
+
+            // ===== ANIMAÇÃO DE ENTRADA =====
+            // A animação já está no CSS, mas podemos adicionar um pequeno efeito extra
+            console.log('📸 Página do portfólio carregada!');
+            console.log('💡 Dica: Substitua "image.jpg" pela sua imagem.');
+
+            // ===== REDIRECIONAMENTO COM TECLA ESC (opcional) =====
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape') {
+                    window.location.href = 'index.html';
+                }
+            });
+
+        })();
+    </script>
+
+</body>
+</html>
